@@ -109,7 +109,7 @@ async function runUpdateCheck() {
             if (Settings.autoUpdateNotification) {
                 notify({
                     title: "Vencord has been updated!",
-                    body: "Click here to restart",
+                    body: "Vencord must restart to apply new changes.\nClick here to restart",
                     onClick: relaunch
                 });
             }
