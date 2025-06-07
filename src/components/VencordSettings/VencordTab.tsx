@@ -156,6 +156,11 @@ function VencordSettings() {
                         action={openNotificationLogModal}
                     />
                     <QuickAction
+                        Icon={LogIcon}
+                        text="Notification Settings"
+                        action={openNotificationSettingsModal}
+                    />
+                    <QuickAction
                         Icon={PaintbrushIcon}
                         text="Edit QuickCSS"
                         action={() => VencordNative.quickCss.openEditor()}
@@ -272,17 +277,6 @@ function VencordSettings() {
                     isSelected={v => settings.macosVibrancyStyle === v}
                     serialize={identity} />
             </>}
-
-            <Forms.FormSection className={Margins.top16} title="Vencord Notifications" tag="h5">
-                <Flex>
-                    <Button onClick={openNotificationSettingsModal}>
-                        Notification Settings
-                    </Button>
-                    <Button onClick={openNotificationLogModal}>
-                        View Notification Log
-                    </Button>
-                </Flex>
-            </Forms.FormSection>
         </SettingsTab>
     );
 }
