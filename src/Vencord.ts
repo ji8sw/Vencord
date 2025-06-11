@@ -102,6 +102,7 @@ async function runUpdateCheck() {
 
     try {
         const isOutdated = await checkForUpdates();
+
         if (!isOutdated) return;
 
         if (Settings.autoUpdate) {

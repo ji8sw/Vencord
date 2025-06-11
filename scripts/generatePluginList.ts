@@ -133,9 +133,11 @@ async function parseFile(fileName: string) {
                 case "authors":
                     if (!isArrayLiteralExpression(value)) throw fail("authors is not an array literal");
                     data.authors = value.elements.map(e => {
-                        if (!isPropertyAccessExpression(e)) throw fail("authors array contains non-property access expressions");
                         const d = devs[getName(e)!];
-                        if (!d) throw fail(`couldn't look up author ${getName(e)}`);
+                        if (!d) devs[getName(e)!] = {
+                            name: "Unknown Developer",
+                            id: "0"
+                        };
                         return d;
                     });
                     break;
